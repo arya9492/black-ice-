@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/venv/
+venv/
+.venv/
+env/
+
+# Production Builds
+dist/
+dist-ssr/
+frontend/dist/
+frontend/dist-ssr/
+
+# Python Cache & Runtime
+__pycache__/
+*.py[cod]
+*$py.class
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+.pytest_cache/
+
+# Databases & Runtime Data
+*.sqlite3
+*.db
+backend/*.db
+backend/*.sqlite3
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.local
+backend/.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE & OS Artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary / Scratch
+scratch/
+.system_generated/
