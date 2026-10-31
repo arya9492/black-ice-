@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: black-ice
+    runtime: docker
+    plan: starter # Render Persistent Disks require Starter plan; on Free plan remove the disk block or use Render Managed Postgres
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATA_DIR
+        value: /var/data
+      - key: DATABASE_URL
+        value: sqlite:////var/data/blackice.db
+      - key: CORS_ORIGINS
+        value: "*"
+    disk:
+      name: blackice-data
+      mountPath: /var/data
+      sizeGB: 1
